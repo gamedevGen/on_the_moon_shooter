@@ -5,7 +5,11 @@ using UnityEngine;
 public class target : MonoBehaviour
 {
     public float heath = 25f;
-
+    public ParticleSystem dead;
+    private void Start()
+    {
+        dead.Stop();
+    }
     public void Takedamge (float amount)
     {
         heath -= amount;
@@ -16,6 +20,7 @@ public class target : MonoBehaviour
     }
     void die()
     {
+        dead.Play();
         Destroy(gameObject);
     }
 }
