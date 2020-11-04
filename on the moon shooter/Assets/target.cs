@@ -7,13 +7,18 @@ public class target : MonoBehaviour
 {
     public float heath = 25f;
 
+
+    
+
     public ParticleSystem dead;
+
     float delay = 1.6f;
     bool effectPlayed = false;
     private void Start()
     {
-        dead.Stop();
+       
     }
+
 
     public void Takedamge (float amount)
     {
@@ -29,15 +34,13 @@ public class target : MonoBehaviour
     void die()
     {
 
+
         dead.Play();
         StartCoroutine((string)effectDelay());
+
         
 
         Destroy(gameObject);
     }
-    IEnumerable effectDelay()
-    {
-        yield return new WaitForSeconds(1.8f);
 
-    }
 }
